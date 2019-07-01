@@ -44,13 +44,16 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       body: Column(
         children: <Widget>[
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Pesquise Aqui!',
-              labelStyle: TextStyle(color: Colors.white),
-              border: OutlineInputBorder()
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextField(
+              decoration: InputDecoration(
+                  labelText: 'Pesquise Aqui!',
+                  labelStyle: TextStyle(color: Colors.white),
+                  border: OutlineInputBorder()
+              ),
+              style: TextStyle(color: Colors.white),
             ),
-            style: TextStyle(color: Colors.white, fontSize: 10),
           )
         ],
       ),
