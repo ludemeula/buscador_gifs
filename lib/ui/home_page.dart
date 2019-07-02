@@ -41,19 +41,7 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           Padding(
             padding: EdgeInsets.all(10),
-            child: TextField(
-              decoration: InputDecoration(
-                  labelText: 'Pesquise Aqui!',
-                  labelStyle: TextStyle(color: Colors.white),
-                  border: OutlineInputBorder()),
-              style: TextStyle(color: Colors.white),
-              onSubmitted: (text) {
-                setState(() {
-                  _search = text;
-                  _offset = 0;
-                });
-              },
-            ),
+            child: _buildTextField()
           ),
           Expanded(
             child: FutureBuilder(
@@ -81,6 +69,22 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
+    );
+  }
+
+  Widget _buildTextField() {
+    return TextField(
+      decoration: InputDecoration(
+          labelText: 'Pesquise Aqui!',
+          labelStyle: TextStyle(color: Colors.white),
+          border: OutlineInputBorder()),
+      style: TextStyle(color: Colors.white),
+      onSubmitted: (text) {
+        setState(() {
+          _search = text;
+          _offset = 0;
+        });
+      },
     );
   }
 
